@@ -14,7 +14,7 @@ const App = () => {
   // ref를 사용하여 변수 담기
   const nextId = useRef(4);
 
-  // 할 일 추가
+  // 할 일 추가하기
   const onInsert = useCallback(
     (text) => {
       const todo = {
@@ -28,17 +28,30 @@ const App = () => {
     [todos],
   );
 
-  // 할 일 지우기
+  // 할 일 삭제하기
   const onRemove = useCallback(
     (id) => {
       setTodos(todos.filter((todo) => todo.id !== id));
     },
     [todos],
   );
+
+  // 할 일 수정하기
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 };

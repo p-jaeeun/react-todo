@@ -5,18 +5,18 @@
   margin-right: auto;
   border-radius: 4px;
   overflow: hidden;
-}
 
-.app-title {
-  background: #22b8cf;
-  color: white;
-  hegiht: 4rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .app-title {
+    background: #22b8cf;
+    color: white;
+    height: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.content {
-  background: white;
+  .content {
+    background: white;
+  }
 }

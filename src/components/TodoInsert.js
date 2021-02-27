@@ -14,9 +14,9 @@ const TodoInsert = ({ onInsert }) => {
   // onclick으로하면 onKeyPress 이벤트 따로 처리해줘야함!!
   const onSubmit = useCallback(
     (e) => {
+      e.preventDefault();
       // submit이벤트는 브라우저에서 새로고침을 발생시키므로
       // 이를 방지하기위해 preventDefault함수 호출!
-      e.preventDefault();
 
       onInsert(value);
       setValue(''); //value값 초기화
